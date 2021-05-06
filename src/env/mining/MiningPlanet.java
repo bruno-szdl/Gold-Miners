@@ -78,6 +78,7 @@ public class MiningPlanet extends Artifact {
                 case 4: model = WorldModel.world4(); break;
                 case 5: model = WorldModel.world5(); break;
                 case 6: model = WorldModel.world6(); break;
+                case 7: model = WorldModel.world7(); break;
                 default:
                     logger.info("Invalid index!");
                     return;
