@@ -12,27 +12,47 @@
 
 mas gold_miners {
     agent leader
-    agent miner1 : miner.asl  {
+    agent blueMiner1 : blueMiner.asl  {
         focus: mining.m1view
     }
-    agent miner2 : dummy.as l {
+    agent blueMiner2 : blueMiner.as l {
         focus: mining.m2view
     }
-    agent miner3 : dummy.asl  {
+    agent blueMiner3 : blueMiner.asl  {
         focus: mining.m3view
     }
-    agent miner4 : dummy.asl  {
+    agent redMiner1 : redMiner.asl  {
         focus: mining.m4view
+    }
+    agent redMiner2 : redMiner.asl  {
+        focus: mining.m5view
+    }
+    agent redMiner3 : redMiner.asl {
+        focus: mining.m6view
+    }
+    agent greenMiner1 : greenMiner.asl  {
+        focus: mining.m7view
+    }
+    agent greenMiner2 : greenMiner.asl  {
+        focus: mining.m8view
+    }
+    agent greenMiner3 : greenMiner.asl  {
+        focus: mining.m9view
     }
 
     workspace mining {
         // each agent has its own artifact to interface with the Mining Planet scenario
         // first parameter is the id of the scenario
         // second parameter is the id of the agent in the scenario
-        artifact m1view: mining.MiningPlanet(1,0)
-        artifact m2view: mining.MiningPlanet(1,1)
-        artifact m3view: mining.MiningPlanet(1,2)
-        artifact m4view: mining.MiningPlanet(1,3)
+        artifact m1view: mining.MiningPlanet(7,0)
+        artifact m2view: mining.MiningPlanet(7,1)
+        artifact m3view: mining.MiningPlanet(7,2)
+        artifact m4view: mining.MiningPlanet(7,3)
+        artifact m5view: mining.MiningPlanet(7,4)
+        artifact m6view: mining.MiningPlanet(7,5)
+        artifact m7view: mining.MiningPlanet(7,6)
+        artifact m8view: mining.MiningPlanet(7,7)
+        artifact m9view: mining.MiningPlanet(7,8)
     }
 
     class-path: lib                      // java class path

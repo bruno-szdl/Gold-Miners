@@ -160,7 +160,7 @@ score(0).
      !!handle(Gold). // must use !! to perform "handle" as not atomic
 
 +!handle(gold(X,Y))
-  :  not free
+  :  not free & team(T)
   <- .print("Handling ",gold(X,Y)," now.");
      !pos(X,Y);
      !ensure(pick,gold(X,Y));
@@ -170,7 +170,7 @@ score(0).
      .print("Finish handling ",gold(X,Y));
      ?score(S);
      -+score(S+1);
-     .send(leader,tell,dropped);
+     .send(leader,tell,dropped(T));
      !!choose_gold.
 
 // if ensure(pick/drop) failed, pursue another gold

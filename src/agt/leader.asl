@@ -8,10 +8,9 @@
  */
 
 
-score(miner1,0).
-score(miner2,0).
-score(miner3,0).
-score(miner4,0).
+score("Blue",0).
+score("Red",0).
+score("Green",0).
 
 winning(none,0).
 
@@ -20,16 +19,24 @@ winning(none,0).
 //!start.
 //+!start <- tweet("a new mining is starting! (posted by jason agent)").
 
-+dropped[source(A)] : score(A,S) & winning(L,SL) & S+1>SL
-   <- -score(A,S);
-      +score(A,S+1);
-      -dropped[source(A)];
-      -+winning(A,S+1);
-      .print("Agent ",A," is winning with ",S+1," pieces of gold");
-      .broadcast(tell,winning(A,S+1)).
++dropped(T)[source(A)] : score(T,S) & winning(L,SL) & S+1>SL
+   <- -score(T,S);
+      +score(T,S+1);
+      -dropped(T)[source(A)];
+      -+winning(T,S+1);
+      .print("Team ",T," is winning with ",S+1," pieces of gold");
+      .broadcast(tell,winning(T,S+1)).
 
-+dropped[source(A)] : score(A,S)
-   <- -score(A,S);
-      +score(A,S+1);
-      -dropped[source(A)];
-      .print("Agent ",A," has dropped ",S+1," pieces of gold").
++dropped(T)[source(A)] : score(T,S) & winning(L,SL) & S+1=SL
+   <- -score(T,S);
+      +score(T,S+1);
+      -dropped(T)[source(A)];
+      -+winning(T,S+1);
+      .print("Team ",T," and Team ", L, " are tied with ", S+1," pieces of gold");
+      .broadcast(tell,winning(T,S+1)).
+
++dropped(T)[source(A)] : score(T,S)
+   <- -score(T,S);
+      +score(T,S+1);
+      -dropped(T)[source(A)];
+      .print("Team ",T," has dropped ",S+1," pieces of gold").
