@@ -24,6 +24,8 @@ public class WorldModel extends GridWorldModel {
 
     private String            id = "WorldModel";
 
+    int agsByTeam = 3;
+
     // singleton pattern
     protected static WorldModel model = null;
 
@@ -45,6 +47,10 @@ public class WorldModel extends GridWorldModel {
     private WorldModel(int w, int h, int nbAgs) {
         super(w, h, nbAgs);
         agWithGold = new HashSet<Integer>();
+    }
+
+    public int getAgsByTeam() {
+        return agsByTeam;
     }
 
     public String getId() {
@@ -370,6 +376,165 @@ public class WorldModel extends GridWorldModel {
         model.add(WorldModel.GOLD, 19, 2);
         model.add(WorldModel.GOLD, 14, 4);
         model.add(WorldModel.GOLD, 34, 34);
+
+        model.add(WorldModel.OBSTACLE, 12, 3);
+        model.add(WorldModel.OBSTACLE, 13, 3);
+        model.add(WorldModel.OBSTACLE, 14, 3);
+        model.add(WorldModel.OBSTACLE, 15, 3);
+        model.add(WorldModel.OBSTACLE, 18, 3);
+        model.add(WorldModel.OBSTACLE, 19, 3);
+        model.add(WorldModel.OBSTACLE, 20, 3);
+        model.add(WorldModel.OBSTACLE, 14, 8);
+        model.add(WorldModel.OBSTACLE, 15, 8);
+        model.add(WorldModel.OBSTACLE, 16, 8);
+        model.add(WorldModel.OBSTACLE, 17, 8);
+        model.add(WorldModel.OBSTACLE, 19, 8);
+        model.add(WorldModel.OBSTACLE, 20, 8);
+
+        model.add(WorldModel.OBSTACLE, 12, 32);
+        model.add(WorldModel.OBSTACLE, 13, 32);
+        model.add(WorldModel.OBSTACLE, 14, 32);
+        model.add(WorldModel.OBSTACLE, 15, 32);
+        model.add(WorldModel.OBSTACLE, 18, 32);
+        model.add(WorldModel.OBSTACLE, 19, 32);
+        model.add(WorldModel.OBSTACLE, 20, 32);
+        model.add(WorldModel.OBSTACLE, 14, 28);
+        model.add(WorldModel.OBSTACLE, 15, 28);
+        model.add(WorldModel.OBSTACLE, 16, 28);
+        model.add(WorldModel.OBSTACLE, 17, 28);
+        model.add(WorldModel.OBSTACLE, 19, 28);
+        model.add(WorldModel.OBSTACLE, 20, 28);
+
+        model.add(WorldModel.OBSTACLE, 3, 12);
+        model.add(WorldModel.OBSTACLE, 3, 13);
+        model.add(WorldModel.OBSTACLE, 3, 14);
+        model.add(WorldModel.OBSTACLE, 3, 15);
+        model.add(WorldModel.OBSTACLE, 3, 18);
+        model.add(WorldModel.OBSTACLE, 3, 19);
+        model.add(WorldModel.OBSTACLE, 3, 20);
+        model.add(WorldModel.OBSTACLE, 8, 14);
+        model.add(WorldModel.OBSTACLE, 8, 15);
+        model.add(WorldModel.OBSTACLE, 8, 16);
+        model.add(WorldModel.OBSTACLE, 8, 17);
+        model.add(WorldModel.OBSTACLE, 8, 19);
+        model.add(WorldModel.OBSTACLE, 8, 20);
+
+        model.add(WorldModel.OBSTACLE, 32, 12);
+        model.add(WorldModel.OBSTACLE, 32, 13);
+        model.add(WorldModel.OBSTACLE, 32, 14);
+        model.add(WorldModel.OBSTACLE, 32, 15);
+        model.add(WorldModel.OBSTACLE, 32, 18);
+        model.add(WorldModel.OBSTACLE, 32, 19);
+        model.add(WorldModel.OBSTACLE, 32, 20);
+        model.add(WorldModel.OBSTACLE, 28, 14);
+        model.add(WorldModel.OBSTACLE, 28, 15);
+        model.add(WorldModel.OBSTACLE, 28, 16);
+        model.add(WorldModel.OBSTACLE, 28, 17);
+        model.add(WorldModel.OBSTACLE, 28, 19);
+        model.add(WorldModel.OBSTACLE, 28, 20);
+
+        model.add(WorldModel.OBSTACLE, 13, 13);
+        model.add(WorldModel.OBSTACLE, 13, 14);
+
+        model.add(WorldModel.OBSTACLE, 13, 16);
+        model.add(WorldModel.OBSTACLE, 13, 17);
+
+        model.add(WorldModel.OBSTACLE, 13, 19);
+        model.add(WorldModel.OBSTACLE, 14, 19);
+
+        model.add(WorldModel.OBSTACLE, 16, 19);
+        model.add(WorldModel.OBSTACLE, 17, 19);
+
+        model.add(WorldModel.OBSTACLE, 19, 19);
+        model.add(WorldModel.OBSTACLE, 19, 18);
+
+        model.add(WorldModel.OBSTACLE, 19, 16);
+        model.add(WorldModel.OBSTACLE, 19, 15);
+
+        model.add(WorldModel.OBSTACLE, 19, 13);
+        model.add(WorldModel.OBSTACLE, 18, 13);
+
+        model.add(WorldModel.OBSTACLE, 16, 13);
+        model.add(WorldModel.OBSTACLE, 15, 13);
+
+        // labirinto
+        model.add(WorldModel.OBSTACLE, 2, 32);
+        model.add(WorldModel.OBSTACLE, 3, 32);
+        model.add(WorldModel.OBSTACLE, 4, 32);
+        model.add(WorldModel.OBSTACLE, 5, 32);
+        model.add(WorldModel.OBSTACLE, 6, 32);
+        model.add(WorldModel.OBSTACLE, 7, 32);
+        model.add(WorldModel.OBSTACLE, 8, 32);
+        model.add(WorldModel.OBSTACLE, 9, 32);
+        model.add(WorldModel.OBSTACLE, 10, 32);
+        model.add(WorldModel.OBSTACLE, 10, 31);
+        model.add(WorldModel.OBSTACLE, 10, 30);
+        model.add(WorldModel.OBSTACLE, 10, 29);
+        model.add(WorldModel.OBSTACLE, 10, 28);
+        model.add(WorldModel.OBSTACLE, 10, 27);
+        model.add(WorldModel.OBSTACLE, 10, 26);
+        model.add(WorldModel.OBSTACLE, 10, 25);
+        model.add(WorldModel.OBSTACLE, 10, 24);
+        model.add(WorldModel.OBSTACLE, 10, 23);
+        model.add(WorldModel.OBSTACLE, 2, 23);
+        model.add(WorldModel.OBSTACLE, 3, 23);
+        model.add(WorldModel.OBSTACLE, 4, 23);
+        model.add(WorldModel.OBSTACLE, 5, 23);
+        model.add(WorldModel.OBSTACLE, 6, 23);
+        model.add(WorldModel.OBSTACLE, 7, 23);
+        model.add(WorldModel.OBSTACLE, 8, 23);
+        model.add(WorldModel.OBSTACLE, 9, 23);
+        model.add(WorldModel.OBSTACLE, 2, 29);
+        model.add(WorldModel.OBSTACLE, 2, 28);
+        model.add(WorldModel.OBSTACLE, 2, 27);
+        model.add(WorldModel.OBSTACLE, 2, 26);
+        model.add(WorldModel.OBSTACLE, 2, 25);
+        model.add(WorldModel.OBSTACLE, 2, 24);
+        model.add(WorldModel.OBSTACLE, 2, 23);
+        model.add(WorldModel.OBSTACLE, 2, 29);
+        model.add(WorldModel.OBSTACLE, 3, 29);
+        model.add(WorldModel.OBSTACLE, 4, 29);
+        model.add(WorldModel.OBSTACLE, 5, 29);
+        model.add(WorldModel.OBSTACLE, 6, 29);
+        model.add(WorldModel.OBSTACLE, 7, 29);
+        model.add(WorldModel.OBSTACLE, 7, 28);
+        model.add(WorldModel.OBSTACLE, 7, 27);
+        model.add(WorldModel.OBSTACLE, 7, 26);
+        model.add(WorldModel.OBSTACLE, 7, 25);
+        model.add(WorldModel.OBSTACLE, 6, 25);
+        model.add(WorldModel.OBSTACLE, 5, 25);
+        model.add(WorldModel.OBSTACLE, 4, 25);
+        model.add(WorldModel.OBSTACLE, 4, 26);
+        model.add(WorldModel.OBSTACLE, 4, 27);
+        model.setInitialNbGolds(model.countObjects(WorldModel.GOLD));
+        return model;
+    }
+
+    static WorldModel world7() throws Exception {
+        WorldModel model = WorldModel.create(35, 35, 9);
+        model.setId("Scenario 6");
+        model.setDepot(16, 16);
+        model.setAgPos(0, 0, 0);
+        model.setAgPos(1, 1, 0);
+        model.setAgPos(2, 0, 1);
+        model.setAgPos(3, 33, 33);
+        model.setAgPos(4, 33, 34);
+        model.setAgPos(5, 34, 33);
+        model.setAgPos(6, 33, 0);
+        model.setAgPos(7, 34, 0);
+        model.setAgPos(8, 33, 1);
+        model.add(WorldModel.GOLD, 20, 13);
+        model.add(WorldModel.GOLD, 15, 20);
+        model.add(WorldModel.GOLD, 1, 1);
+        model.add(WorldModel.GOLD, 3, 5);
+        model.add(WorldModel.GOLD, 24, 24);
+        model.add(WorldModel.GOLD, 20, 20);
+        model.add(WorldModel.GOLD, 20, 21);
+        model.add(WorldModel.GOLD, 2, 22);
+        model.add(WorldModel.GOLD, 2, 12);
+        model.add(WorldModel.GOLD, 19, 2);
+        model.add(WorldModel.GOLD, 14, 4);
+        model.add(WorldModel.GOLD, 29, 34);
 
         model.add(WorldModel.OBSTACLE, 12, 3);
         model.add(WorldModel.OBSTACLE, 13, 3);
