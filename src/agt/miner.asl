@@ -214,6 +214,13 @@ score(0).
   <- !calc_gold_distance(R,RD).
 
 
++winning(A,S)[source(leader)] : .my_name(A)
+   <-  -winning(A,S);
+       .print("I am the greatest!!!").
+
++winning(A,S)[source(leader)] : true
+   <-  -winning(A,S).
+
 /* end of a simulation */
 
 +end_of_simulation(S,_) : true
