@@ -517,7 +517,7 @@ public class WorldModel extends GridWorldModel {
         model.setAgPos(0, 0, 0);
         model.setAgPos(1, 1, 0);
         model.setAgPos(2, 0, 1);
-        model.setAgPos(3, 43, 43);
+        model.setAgPos(3, 44, 43);
         model.setAgPos(4, 43, 44);
         model.setAgPos(5, 44, 43);
         model.setAgPos(6, 43, 0);
@@ -525,7 +525,7 @@ public class WorldModel extends GridWorldModel {
         model.setAgPos(8, 43, 1);
         model.add(WorldModel.GOLD, 25, 18);
         model.add(WorldModel.GOLD, 20, 25);
-        model.add(WorldModel.GOLD, 6, 6);
+        model.add(WorldModel.GOLD, 4, 4);
         model.add(WorldModel.GOLD, 8, 10);
         model.add(WorldModel.GOLD, 31, 29);
         model.add(WorldModel.GOLD, 25, 25);
@@ -552,8 +552,19 @@ public class WorldModel extends GridWorldModel {
         model.add(WorldModel.GOLD, 3, 26);
         model.add(WorldModel.GOLD, 36, 21);
         model.add(WorldModel.GOLD, 25, 41);
-        model.add(WorldModel.GOLD, 38, 37);
-        model.add(WorldModel.GOLD, 43, 23);
+        model.add(WorldModel.GOLD, 40, 40);
+        model.add(WorldModel.GOLD, 41, 28);
+        model.add(WorldModel.GOLD, 1, 39);
+        model.add(WorldModel.GOLD, 4, 43);
+        model.add(WorldModel.GOLD, 16, 28);
+        model.add(WorldModel.GOLD, 41, 16);
+        model.add(WorldModel.GOLD, 14, 29);
+        model.add(WorldModel.GOLD, 2, 16);
+        model.add(WorldModel.GOLD, 40, 4);
+        model.add(WorldModel.GOLD, 21, 0);
+        model.add(WorldModel.GOLD, 26, 32);
+        model.add(WorldModel.GOLD, 4, 40);
+
 
         model.add(WorldModel.OBSTACLE, 17, 8);
         model.add(WorldModel.OBSTACLE, 18, 8);
