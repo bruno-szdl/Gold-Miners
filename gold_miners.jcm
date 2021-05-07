@@ -14,30 +14,39 @@ mas gold_miners {
     agent leader
     agent blueMiner1 : blueMiner.asl  {
         focus: mining.m1view
+        focus: mining.blueTeamMap
     }
     agent blueMiner2 : blueMiner.as l {
         focus: mining.m2view
+        focus: mining.blueTeamMap
     }
     agent blueMiner3 : blueMiner.asl  {
         focus: mining.m3view
+        focus: mining.blueTeamMap
     }
     agent redMiner1 : redMiner.asl  {
         focus: mining.m4view
+        focus: mining.redTeamMap
     }
     agent redMiner2 : redMiner.asl  {
         focus: mining.m5view
+        focus: mining.redTeamMap
     }
     agent redMiner3 : redMiner.asl {
         focus: mining.m6view
+        focus: mining.redTeamMap
     }
     agent greenMiner1 : greenMiner.asl  {
         focus: mining.m7view
+        focus: mining.greenTeamMap
     }
     agent greenMiner2 : greenMiner.asl  {
         focus: mining.m8view
+        focus: mining.greenTeamMap
     }
     agent greenMiner3 : greenMiner.asl  {
         focus: mining.m9view
+        focus: mining.greenTeamMap
     }
 
     workspace mining {
@@ -53,6 +62,10 @@ mas gold_miners {
         artifact m7view: mining.MiningPlanet(7,6)
         artifact m8view: mining.MiningPlanet(7,7)
         artifact m9view: mining.MiningPlanet(7,8)
+
+        artifact blueTeamMap: tools.WorldMap("TeamBlue")
+        artifact redTeamMap: tools.WorldMap("TeamRed")
+        artifact greenTeamMap: tools.WorldMap("TeamGreen")
     }
 
     class-path: lib                      // java class path
