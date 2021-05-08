@@ -1,6 +1,10 @@
 // miner agent
 
-team("Blue").
+team("blue").
+
+!start.
++!start : true
+    <- lookupArtifact("blueTeamMap", MapId).
 
 { include("miner.asl") }
 
