@@ -66,10 +66,10 @@ public class WorldMap extends Artifact {
 		signal("gold_found", X, Y);
 	}
 
-	/*@OPERATION
+	@OPERATION
 	void setGoldPicked(int X, int Y) {
 		signal("gold_picked", X, Y);
-	}*/
+	}
 
 	@OPERATION
 	void setAgentGoldCell(int X, int Y) {

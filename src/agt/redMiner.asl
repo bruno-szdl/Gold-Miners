@@ -111,8 +111,12 @@ team("red").
    <- +gold(X, Y);
    .
 
-+gold_picked(X, Y) 
++gold_picked(X, Y)
+   : .desire(handle(gold(X,Y))) &
+     not picked(gold(X,Y))
    <- -gold(X, Y);
+      .drop_desire(handle(gold(X,Y)));
+      !ask_gold_cell;
    .
 
 @pgold[atomic]           // atomic: so as not to handle another event until handle gold is initialised
@@ -136,7 +140,9 @@ team("red").
 
 +!ensure(pick,_) : pos(X,Y) & gold(X,Y)
   <- pick;
+     +picked(gold(X,Y));
      setFreeCell(X, Y) [artifact_id(MapId)];
+     setGoldPicked(X, Y) [artifact_id(MapId)];
      ?carrying_gold;
      -gold(X,Y).
 
