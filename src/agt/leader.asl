@@ -8,9 +8,9 @@
  */
 
 
-score("Blue",0).
-score("Red",0).
-score("Green",0).
+score("blue",0).
+score("red",0).
+score("green",0).
 
 winning(none,0).
 
