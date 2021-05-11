@@ -511,7 +511,7 @@ public class WorldModel extends GridWorldModel {
     }
 
     static WorldModel world7() throws Exception {
-        WorldModel model = WorldModel.create(45, 45, 9);
+        WorldModel model = WorldModel.create(45, 45, 6);
         model.setId("Scenario 7");
         model.setDepot(21, 21);
         model.setAgPos(0, 0, 0);
@@ -520,9 +520,6 @@ public class WorldModel extends GridWorldModel {
         model.setAgPos(3, 44, 43);
         model.setAgPos(4, 43, 44);
         model.setAgPos(5, 44, 43);
-        model.setAgPos(6, 43, 0);
-        model.setAgPos(7, 44, 0);
-        model.setAgPos(8, 43, 1);
         model.add(WorldModel.GOLD, 25, 18);
         model.add(WorldModel.GOLD, 20, 25);
         model.add(WorldModel.GOLD, 4, 4);

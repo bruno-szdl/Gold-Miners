@@ -170,13 +170,10 @@ public class WorldView extends GridWorldView {
         Color idColor = Color.black;
 
         if (id < nbAgByTeam) {
-            super.drawAgent(g, x, y, Color.blue, -1);
+            super.drawAgent(g, x, y, Color.green, -1);
         }
         else if (id < nbAgByTeam*2) {
-            super.drawAgent(g, x, y, Color.red, -1);
-        }
-        else if (id < nbAgByTeam*3) {
-                super.drawAgent(g, x, y, Color.green, -1);
+            super.drawAgent(g, x, y, Color.blue, -1);
         }
 
         if (((WorldModel)model).isCarryingGold(id)) {
