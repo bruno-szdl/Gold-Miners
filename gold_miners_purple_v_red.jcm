@@ -13,29 +13,29 @@
 mas gold_miners {
     agent leader
 
-    agent greenMiner1 : greenMiner.asl  {
+    agent purpleMiner1 : purpleMinerExplorer.asl  {
         focus: mining.m1view
-        focus: mining.greenTeamMap
+        focus: mining.purpleTeamMap
     }
-    agent greenMiner2 : greenMiner.asl  {
+    agent purpleMiner2 : purpleMinerCollector.asl  {
         focus: mining.m2view
-        focus: mining.greenTeamMap
+        focus: mining.purpleTeamMap
     }
-    agent greenMiner3 : greenMiner.asl {
+    agent purpleMiner3 : purpleMinerCollector.asl {
         focus: mining.m3view
-        focus: mining.greenTeamMap
+        focus: mining.purpleTeamMap
     }
-    agent blueMiner1 : blueMiner.asl  {
+    agent redMiner1 : redMiner.asl  {
         focus: mining.m4view
-        focus: mining.blueTeamMap
+        focus: mining.redTeamMap
     }
-    agent blueMiner2 : blueMiner.asl  {
+    agent redMiner2 : redMiner.asl  {
         focus: mining.m5view
-        focus: mining.blueTeamMap
+        focus: mining.redTeamMap
     }
-    agent blueMiner3 : blueMiner.asl {
+    agent redMiner3 : redMiner.asl {
         focus: mining.m6view
-        focus: mining.blueTeamMap
+        focus: mining.redTeamMap
     }
 
     workspace mining {
@@ -49,18 +49,18 @@ mas gold_miners {
         artifact m5view: mining.MiningPlanet(7,4)
         artifact m6view: mining.MiningPlanet(7,5)
 
-        artifact blueTeamMap: tools.WorldMap("TeamBlue")
-        artifact greenTeamMap: tools.WorldMap("TeamGreen")
+        artifact purpleTeamMap: tools.WorldMap("TeamPurple")
+        artifact redTeamMap: tools.WorldMap("TeamRed")
     }
 
-    organisation green_org: green_org.xml {
-        group green_grp: mining_grp {
-            responsible-for: green_sch
-            players: greenMiner1 left_miner,
-                     greenMiner2 center_miner,
-                     greenMiner3 right_miner,
+    organisation purple_org: purple_org.xml {
+        group purple_grp: mining_grp {
+            responsible-for: purple_sch
+            players: purpleMiner1 explorer,
+                     purpleMiner2 collector,
+                     purpleMiner3 collector,
         }
-        scheme green_sch: mining_sch
+        scheme purple_sch: mining_sch
     }
 
     class-path: lib                      // java class path

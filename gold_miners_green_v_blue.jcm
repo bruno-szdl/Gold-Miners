@@ -53,7 +53,7 @@ mas gold_miners {
         artifact greenTeamMap: tools.WorldMap("TeamGreen")
     }
 
-    organisation green_org: green_org.xml {
+    organisation mining_org: green_org.xml {
         group green_grp: mining_grp {
             responsible-for: green_sch
             players: greenMiner1 left_miner,

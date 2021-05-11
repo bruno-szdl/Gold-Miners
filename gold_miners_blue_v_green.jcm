@@ -13,29 +13,29 @@
 mas gold_miners {
     agent leader
 
-    agent greenMiner1 : greenMiner.asl  {
-        focus: mining.m1view
-        focus: mining.greenTeamMap
-    }
-    agent greenMiner2 : greenMiner.asl  {
-        focus: mining.m2view
-        focus: mining.greenTeamMap
-    }
-    agent greenMiner3 : greenMiner.asl {
-        focus: mining.m3view
-        focus: mining.greenTeamMap
-    }
     agent blueMiner1 : blueMiner.asl  {
-        focus: mining.m4view
+        focus: mining.m1view
         focus: mining.blueTeamMap
     }
     agent blueMiner2 : blueMiner.asl  {
-        focus: mining.m5view
+        focus: mining.m2view
         focus: mining.blueTeamMap
     }
     agent blueMiner3 : blueMiner.asl {
-        focus: mining.m6view
+        focus: mining.m3view
         focus: mining.blueTeamMap
+    }
+    agent greenMiner1 : greenMiner.asl  {
+        focus: mining.m4view
+        focus: mining.greenTeamMap
+    }
+    agent greenMiner2 : greenMiner.asl  {
+        focus: mining.m5view
+        focus: mining.greenTeamMap
+    }
+    agent greenMiner3 : greenMiner.asl {
+        focus: mining.m6view
+        focus: mining.greenTeamMap
     }
 
     workspace mining {
