@@ -5,8 +5,6 @@
 /* beliefs */
 last_dir(null). // the last movement I did
 free.
-score(0).
-count(0).
 team("red").
 
 !start.
@@ -167,8 +165,6 @@ team("red").
      !pos(DX,DY);
      !ensure(drop, 0);
      .print("Finish handling ",gold(X,Y));
-     ?score(S);
-     -+score(S+1);
      .send(leader,tell,dropped(T));
      !!ask_gold_cell.
 
@@ -193,7 +189,6 @@ team("red").
 
 +!ask_gold_cell : pos(AgX, AgY)
     <- askCloserGoldCell(AgX, AgY, XG, YG);
-       .print("--------(", XG, ", ", YG,")--------------");
        if (XG \== 100){
          setAgentGoldCell(XG, YG) [artifact_id(MapId)];
          !!handle(gold(XG, YG));

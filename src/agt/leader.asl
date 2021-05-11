@@ -11,6 +11,8 @@
 score("blue",0).
 score("red",0).
 score("green",0).
+score("purple",0).
+
 
 winning(none,0).
 
@@ -25,7 +27,7 @@ winning(none,0).
       -dropped(T)[source(A)];
       -+winning(T,S+1);
       .print("Team ",T," is winning with ",S+1," pieces of gold");
-      .broadcast(tell,winning(T,S+1)).
+      .
 
 +dropped(T)[source(A)] : score(T,S) & winning(L,SL) & S+1=SL
    <- -score(T,S);
@@ -33,7 +35,7 @@ winning(none,0).
       -dropped(T)[source(A)];
       -+winning(T,S+1);
       .print("Team ",T," and Team ", L, " are tied with ", S+1," pieces of gold");
-      .broadcast(tell,winning(T,S+1)).
+      .
 
 +dropped(T)[source(A)] : score(T,S)
    <- -score(T,S);
