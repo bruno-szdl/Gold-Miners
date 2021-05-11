@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="http://moise.sourceforge.net/xml/os.xsl" type="text/xsl" ?>
+
+<organisational-specification
+    id="gold_miners"
+    os-version="0.8"
+
+    xmlns='http://moise.sourceforge.net/os'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:schemaLocation='http://moise.sourceforge.net/os
+                        http://moise.sourceforge.net/xml/os.xsd' >
+
+<structural-specification>
+
+    <role-definitions>
+        <role id="explorer" />
+        <role id="collector" />
+    </role-definitions>
+
+    <group-specification id="mining_grp">
+        <roles>
+            <role id="explorer"  min="1" max="1"/>
+            <role id="collector" min="2" max="2"/>
+        </roles>
+    </group-specification>
+
+</structural-specification>
+
+<functional-specification>
+    <scheme id="mining_sch">
+        <goal id="win">
+            <plan operator="parallel">
+                <goal id="explore"/>
+                <goal id="collect"/>
+            </plan>
+        </goal>
+
+        <mission id="mExplorer" min="1" max="1">
+            <goal id="explore"/>
+        </mission>
+        <mission id="mCollector" min="2" max="2">
+            <goal id="collect"/>
+        </mission>
+    </scheme>
+</functional-specification>
+
+<normative-specification>
+  <norm id="n1"  type="obligation"   role="explorer"   mission="mExplorer" />
+  <norm id="n2"  type="obligation"   role="collector"  mission="mCollector" />
+</normative-specification>
+
+</organisational-specification>

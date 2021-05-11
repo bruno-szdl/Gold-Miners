@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="http://moise.sourceforge.net/xml/os.xsl" type="text/xsl" ?>
+
+<organisational-specification
+    id="gold_miners"
+    os-version="0.8"
+
+    xmlns='http://moise.sourceforge.net/os'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:schemaLocation='http://moise.sourceforge.net/os
+                        http://moise.sourceforge.net/xml/os.xsd' >
+
+<structural-specification>
+
+    <role-definitions>
+        <role id="left_miner" />
+        <role id="center_miner" />
+        <role id="right_miner" />
+    </role-definitions>
+
+    <group-specification id="mining_grp">
+        <roles>
+            <role id="left_miner"  min="1" max="1"/>
+            <role id="center_miner" min="1" max="1"/>
+            <role id="right_miner" min="1" max="1"/>
+        </roles>
+    </group-specification>
+
+</structural-specification>
+
+<functional-specification>
+    <scheme id="mining_sch">
+        <goal id="win">
+            <plan operator="parallel">
+                <goal id="collect_left"/>
+                <goal id="collect_center"/>
+                <goal id="collect_right"/>
+            </plan>
+        </goal>
+
+        <mission id="mLeft" min="1" max="1">
+            <goal id="collect_left"/>
+        </mission>
+        <mission id="mCenter" min="1" max="1">
+            <goal id="collect_center"/>
+        </mission>
+        <mission id="mRight" min="1" max="1">
+            <goal id="collect_right"/>
+        </mission>
+    </scheme>
+</functional-specification>
+
+<normative-specification>
+  <norm id="n1"  type="obligation"   role="left_miner"   mission="mLeft" />
+  <norm id="n2"  type="obligation"   role="center_miner"  mission="mCenter" />
+  <norm id="n3"  type="obligation"   role="right_miner"  mission="mRight" />
+</normative-specification>
+
+</organisational-specification>
