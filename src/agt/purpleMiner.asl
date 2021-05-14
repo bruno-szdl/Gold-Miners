@@ -20,7 +20,12 @@ team("purple").
         .
 
 +!collect
-   <- +free.
+   <- +collector;
+      +free.
+
++!explore
+   <- +explorer;
+      +free.
 
 +free
    <-   askUnknownCell(RX, RY) [artifact_id(MapId)];
@@ -36,7 +41,8 @@ team("purple").
    <- .wait(100); -+free.
 
 
-+near(X,Y) : free <- !ask_gold_cell.
++near(X,Y) : free & explorer <- -+free.
++near(X,Y) : free & collector <- !ask_gold_cell.
 
 
 +!setFreeCellsAround(X, Y)
@@ -96,7 +102,7 @@ team("purple").
    <- !next_step(X,Y);
       !pos(X,Y).
 
-+cell(X,Y,gold) :  not carrying_gold
++cell(X,Y,gold) : collector & not carrying_gold 
     <- setGoldCell(X, Y) [artifact_id(MapId)];
        +gold(X,Y);
     .
@@ -115,9 +121,10 @@ team("purple").
    <- +gold(X, Y);
    .
 
-+gold_picked(X, Y)
++gold_picked(X, Y) 
    : .desire(handle(gold(X,Y))) &
-     not picked(gold(X,Y))
+     not picked(gold(X,Y)) &
+     collector
    <- -gold(X, Y);
       .drop_desire(handle(gold(X,Y)));
       !ask_gold_cell;
@@ -125,14 +132,14 @@ team("purple").
 
 @pgold[atomic]           // atomic: so as not to handle another event until handle gold is initialised
 +gold(X,Y)
-  :  not carrying_gold & free
+  :  not carrying_gold & free & collector
   <- -free;
      .print("Gold perceived: ",gold(X,Y));
      !init_handle(gold(X,Y)).
 
 @pgold2[atomic]
 +gold(X,Y)
-  :  not carrying_gold & not free &
+  :  not carrying_gold & not free & collector &
      .desire(handle(gold(OldX,OldY))) &   // I desire to handle another gold which
      pos(AgX,AgY) &
      jia.dist(X,   Y,   AgX,AgY,DNewG) &

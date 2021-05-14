@@ -13,15 +13,15 @@
 mas gold_miners {
     agent leader
 
-    agent purpleMiner1 : purpleMinerExplorer.asl  {
+    agent purpleMiner1 : purpleMiner.asl  {
         focus: mining.m1view
         focus: mining.purpleTeamMap
     }
-    agent purpleMiner2 : purpleMinerCollector.asl  {
+    agent purpleMiner2 : purpleMiner.asl  {
         focus: mining.m2view
         focus: mining.purpleTeamMap
     }
-    agent purpleMiner3 : purpleMinerCollector.asl {
+    agent purpleMiner3 : purpleMiner.asl {
         focus: mining.m3view
         focus: mining.purpleTeamMap
     }
